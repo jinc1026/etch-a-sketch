@@ -1,20 +1,67 @@
+@font-face {
+	font-family: pixeboy;
+	src: url(font/Pixeboy-z8XGD.ttf);
+}
+
+body {
+	background-color: #B8B8B8;
+	font-family: pixeboy;
+}
+
+#titleBlock {
+	text-align: center;
+	
+}
+
+#titleBlock > h1 {
+	font-size: 50px;
+	margin-bottom: 0;
+}
+#titleBlock > p {
+	font-size: 20px;
+}
+
+#buttons {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+button {
+	margin: 0 10px;
+	font-size: 20px;
+	font-family: pixeboy;
+}
+
 #gridContainer {
+	display: flex;
+	flex-direction: column;
+	align-content: stretch;
 	width: 600px;
+	height: 600px;
+	border: 1px solid black;
+	margin: 0 auto;
 }
 
 .gridRow {
  	display: flex;
+	height: 100%;
   	flex-direction: row;
-	width: 100%;
+	justify-content: center;
 }
 
 .gridBox {
 	flex-basis: 100%;
-	height: 20px;
 	border: 1px solid black;
 	background-color: white;
 }
 
 .sketched {
 	background-color: black;
+}
+
+.footer {
+	margin-top: 40px;
+	text-align: center;
+	font-size: 12px;
 }

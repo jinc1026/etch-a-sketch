@@ -42,13 +42,16 @@ function sketchBox() {
 	this.classList.add('sketched');
 };
 
-const gridBoxes = document.querySelectorAll('.gridBox');
+let gridBoxes;
 
-gridBoxes.forEach(eachBox =>
-	eachBox.addEventListener('mouseover',sketchBox)				  
-);
+function activeSketch(){
+	gridBoxes = document.querySelectorAll('.gridBox');
 
-
+	gridBoxes.forEach(eachBox =>
+		eachBox.addEventListener('mouseover',sketchBox)				  
+	);
+}
+activeSketch();
 // 3. Add a button to clear gridContainer
 function clearGrid(){
 
@@ -65,14 +68,19 @@ clearBtn.addEventListener('click', clearGrid);
 const customSizeBtn = document.querySelector('#customSize');
 
 customSizeBtn.addEventListener('click', () => {let customSize = prompt("Enter desired size");
-  
-	if (customSize<100){
+  // if 'cancel' is pressed through 'Apply custom size' button, it keeps the current grid format
+	if (customSize === null){
+	  return;
+  }
+															  
+	if (customSize<=100){
 		while (gridContainer.firstChild) {
    		gridContainer.removeChild(gridContainer.lastChild);
 	   }
 		generateGrid(customSize);
+		activeSketch();
 	} else {
-		alert ('Please keep the size than 100!');
+		alert ('Please keep the size upto 100!');
 	}
 
 })
