@@ -52,6 +52,7 @@ function activeSketch(){
 	);
 }
 activeSketch();
+
 // 3. Add a button to clear gridContainer
 function clearGrid(){
 
